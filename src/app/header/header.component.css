@@ -1,7 +1,6 @@
 
 
 .container {
-    margin: 0px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center; 
@@ -11,18 +10,12 @@
     width: 100vw;
     height : 60px;
     background-color: #fff;
-    padding: 10px 0;
-    margin-bottom:  5px;
+    padding: 0 10px;
     position: fixed;
-    overflow-y:hidden ;
+    /* overflow-y:hidden ; */
     /* display: flex;
     align-items: center; */
 }    
-
-.logo img{
-    width: 40px;
-    margin-bottom: 10px;
-}
 
 .logo {
     display: flex;
@@ -30,25 +23,35 @@
     /* justify-content: space-around; */
 }
 
+.logo img{
+    height: 50px;
+    /* margin-bottom: 10px; */
+}
+
+
 .logo h1 {
     margin-left: 10px;
     font-size: 24px;
 }
 
-nav ul {
-    list-style: none;
+/* -------------------------------- adjust later */
+nav
+{
     display: flex;
-    gap: 20px;
+    align-items: center;
+    /* justify-content: space-around; */
 }
 
-
-.nanLinks{
+.navLinks{
     display: flex;
-    gap: 40px;
+    justify-content: space-around;
+    align-items: center;
 }
+
 
 .navLinks ul
 {
+    list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,8 +59,11 @@ nav ul {
     padding: 10px;
     cursor: pointer;
 }
+
+
 .link{
     width: 50px;
+    /* height: 50px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,26 +71,27 @@ nav ul {
     /* overflow: hidden; */
     /* padding: auto; */
     /* z-index: 5 */
+    margin: 0 10px;
 }
 
 
 .link a {
     text-decoration: none;
     color: #333;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     position: absolute;
-    top: 0;
-    height: 60px;
-    padding: 10px;
+    /* top: 0; */
+    padding: 20px 15px;
+    
 }
 
 .link a:hover {
     background-color: #AD343E;
     border: solid 1px black;
-    text-decoration: underline;
+    text-decoration: none;
 
 }
-.cta .btn {
+.btn {
     margin: 0px 10px;
     padding: 10px 20px;
     background-color: white;
@@ -97,7 +104,7 @@ nav ul {
 
 }
 
-.cta .btn:hover {
+.btn:hover {
     background-color: #AD343E;
     color: white;
 }
