@@ -1,0 +1,127 @@
+.menu-container {
+    text-align: center;
+    padding: 40px;
+}
+
+.menu-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.menu-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    border: none;
+    background-color: #b32e29;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.filter-btn.active {
+    background-color: #c44f4a;
+}
+
+/* .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: left;
+}
+
+.menu-item-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.menu-item h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.menu-item-price {
+    font-size: 1.2em;
+    color: #b32e29;
+}
+
+.menu-item-description {
+    font-size: 0.9em;
+    color: #666;
+} */
+
+
+/*
+.container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Grid layout for product blocks 
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid 
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product-block {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.product-price {
+    color: green;
+    font-size: 16px;
+}
+
+.product-description {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+*/

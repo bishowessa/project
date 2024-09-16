@@ -1,0 +1,110 @@
+/* Hero Component Styles */
+.hero {
+    overflow-x: hidden;
+    background-image: url('./landing-bg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: #333;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-img{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    text-align: center;
+    color: #333;
+
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.hero-buttons .btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.hero-buttons .book {
+    background-color: #d9534f;
+    color: white;
+}
+
+.hero-buttons .explore {
+    background-color: white;
+    color: #333;
+    border: 1px solid #333;
+}
+
+.hero-buttons button:hover {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 992px) {
+    .hero {
+    flex-direction: column;
+    padding: 40px;
+    }
+
+    .hero-content {
+    max-width: 70%;
+    text-align: center;
+    }
+
+    .hero h1 {
+    font-size: 2.8rem;
+    }
+
+    .hero-buttons {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    }
+
+    .hero-buttons a {
+    width: 100%;
+    text-align: center;
+    }
+}
+
+
+/* @media screen and (max-width: 480px) {
+    .hero {
+    padding: 20px;
+    }
+
+    .hero-content {
+    max-width: 100%;
+    }  
+    .hero h1 {
+    font-size: 2rem;
+    }
+
+    .hero p {
+    font-size: 0.9rem;
+    }
+
+    .hero-buttons a {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    }
+} */

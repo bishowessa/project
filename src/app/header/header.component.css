@@ -1,0 +1,103 @@
+
+
+.container {
+    margin: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height : 60px;
+    background-color: #fff;
+    padding: 10px 0;
+    margin-bottom:  5px;
+    position: fixed;
+    overflow-y:hidden ;
+    /* display: flex;
+    align-items: center; */
+}    
+
+.logo img{
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+
+.logo h1 {
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+
+.nanLinks{
+    display: flex;
+    gap: 40px;
+}
+
+.navLinks ul
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    padding: 10px;
+    cursor: pointer;
+}
+.link{
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* padding: auto; */
+    /* z-index: 5 */
+}
+
+
+.link a {
+    text-decoration: none;
+    color: #333;
+    overflow-y: hidden;
+    position: absolute;
+    top: 0;
+    height: 60px;
+    padding: 10px;
+}
+
+.link a:hover {
+    background-color: #AD343E;
+    border: solid 1px black;
+    text-decoration: underline;
+
+}
+.cta .btn {
+    margin: 0px 10px;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+    cursor: pointer;
+    border-radius: 5px;
+    border-style: double;
+    
+
+}
+
+.cta .btn:hover {
+    background-color: #AD343E;
+    color: white;
+}
