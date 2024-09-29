@@ -35,17 +35,20 @@
 }
 
 /* -------------------------------- adjust later */
-nav
+/* nav
 {
     display: flex;
     align-items: center;
     /* justify-content: space-around; */
-}
+/* } */ */
 
 .navLinks{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 60px;
 }
 
 
