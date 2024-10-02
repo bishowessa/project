@@ -56,6 +56,14 @@
     cursor: pointer;
 }
 
+#login-btn {
+    margin-top: 10px;
+}
+
+#login-btn:hover {
+    cursor: pointer;
+    background-color: #d9534f ;
+}
 
 @media screen and (max-width: 992px) {
     .hero {
