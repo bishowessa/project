@@ -11,6 +11,9 @@ import { RouterLink } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
+  successMessage : string | null = null
+  failMessage : string | null = null
+
   http = inject(HttpClient)
 
   fetchData(e: Event) {
@@ -28,10 +31,19 @@ export class RegisterComponent implements OnInit {
     console.log('User Data:', user);
 
     this.http.post('http://localhost:3005/user/register', user)
-      .subscribe(response => {
+      .subscribe((response : any) => {
         console.log('Response:', response);
+        this.successMessage = response.message
+        setTimeout(() => {
+          this.successMessage = null;
+        }, 3000);
       }, error => {
         console.error('Error:', error);
+        this.failMessage = error.error.data.errors[0].msg
+        setTimeout(() => {
+          this.failMessage = null;
+        },3000)
+
       });
   }
 

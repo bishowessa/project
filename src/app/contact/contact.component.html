@@ -34,7 +34,19 @@
         <label for="message">Message</label>
         <textarea id="message" placeholder="Write your message" name = "contactMessage" required></textarea>
       </div>
-  
+      
+      @if (successMessage) {
+        <div class="alert alert-success">{{ successMessage }}</div>
+      }
+    
+      <!-- Display error message -->
+      @if (failMessage) {
+        <div class="alert alert-danger">{{ failMessage }}</div>
+      }
+      @if (fail) {
+        <p class="switch-link">Need to login ? <a routerLink="/login">login here</a></p>
+      }
+
       <!-- Send Button -->
       <button type="submit" class="send-btn">Send</button>
     </form>

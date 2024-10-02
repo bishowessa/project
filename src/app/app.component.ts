@@ -14,13 +14,14 @@ import { AuthService } from './auth.service';
 import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.component";
 import { DisplayUsersComponent } from './display-users/display-users.component';
 import { EditUserComponent } from "./edit-user/edit-user.component";
+import { SecondSectionComponent } from "./second-section/second-section.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, LandingComponent, FooterComponent, ContactComponent, MenuComponent,
-    BookingComponent, FormComponent, LoginComponent, RegisterComponent, FormsModule, AdminDashboardComponent, DisplayUsersComponent, EditUserComponent],
+    BookingComponent, FormComponent, LoginComponent, RegisterComponent, FormsModule, AdminDashboardComponent, DisplayUsersComponent, EditUserComponent, SecondSectionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,14 +1,35 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
+  http = inject(HttpClient);
+  router = inject(Router);
+  meals: any[] = [];
 
+  ngOnInit(): void {
+    this.fetchMeals();
+  }
+
+  fetchMeals() {
+    this.http.get('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
+      .subscribe((response: any) => {
+        this.meals = response.meals;
+      }, error => {
+        console.error('Error fetching meals:', error);
+      });
+  }
+
+  viewMealDetails(id: string) {
+    this.router.navigate(['/meal', id]);
+  }
 }
 
 // window.onload = function() {

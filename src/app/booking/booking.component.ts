@@ -1,29 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-booking',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './booking.component.html',
   styleUrl: './booking.component.css'
 })
 export class BookingComponent implements OnInit{
 
-//   http = inject(HttpClient)
-
-//   formdata : any;
-//   fetchData(e : any){
-//   e.preventDefault()//3lshan amn3 el submit mn enha t refresh
-
-//   this.formdata = new FormData(e.target)
-
-//   console.log(e.target)
-//   console.log(this.formdata.get('bookingName'))
-
-//   this.http.post('http://localhost:3005/book', this.formdata).subscribe(response=>console.log(response))
-  
-// }
+successMessage : string | null = null;
+failMessage : string | null = null;
+fail : boolean = false;
 
 http = inject(HttpClient)
 
@@ -41,10 +31,19 @@ fetchData(e: Event) {
       bookingName: formData.get('bookingName'),
       bookingPhone: formData.get('bookingPhone'),
       bookingPersons: formData.get('bookingPersons')
-  }).subscribe(response => {
+  }, { withCredentials: true }).subscribe(response => {
       console.log('Response:', response);
+      this.successMessage = 'Booking created successfully!';
+      setTimeout(() => {
+          this.successMessage = null;
+      }, 3000);
   }, error => {
       console.error('Error:', error);
+      this.failMessage = 'Failed to create booking.you need to login first';
+      this.fail = true
+      setTimeout(() => {
+          this.failMessage = null;
+      }, 3000);
   });
 }
 

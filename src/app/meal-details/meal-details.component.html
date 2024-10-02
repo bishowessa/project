@@ -1,0 +1,10 @@
+<!-- meal-details.component.html -->
+<div class="meal-details-container">
+    <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="meal-image" />
+    <div class="meal-info">
+        <h2 class="meal-title">{{ meal.strMeal }}</h2>
+        <p class="meal-price">Price: {{ meal.price }}</p>
+        <p class="meal-description">{{ meal.strInstructions }}</p>
+        <a [routerLink]="['/menu']" class="view-recipe-btn">Back to Menu</a>
+    </div>
+</div>

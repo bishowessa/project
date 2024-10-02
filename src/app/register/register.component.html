@@ -26,7 +26,16 @@
           <label for="address">Address</label>
           <input type="text" name="address" class="form-control" placeholder="Enter your address" required />
         </div>
-  
+        
+        @if (successMessage) {
+          <div class="alert alert-success">{{ successMessage }}</div>
+        }
+      
+        <!-- Display error message -->
+        @if (failMessage) {
+          <div class="alert alert-danger">{{ failMessage }}</div>
+        }
+
         <button type="submit" class="auth-btn">Register</button>
       </form>
   

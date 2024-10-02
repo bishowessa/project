@@ -11,6 +11,9 @@ import { RouterLink } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  successMessage : string | null = null
+  failMessage : string | null = null
+  
   http = inject(HttpClient) 
 
   
@@ -28,10 +31,21 @@ fetchData(e: Event) {
   console.log('User Data:', user);
 
   this.http.post('http://localhost:3005/user/login', user,{withCredentials: true})
-    .subscribe(response => {
+    .subscribe((response : any) => {
       console.log('Response:', response);
-    }, error => {
+      this.successMessage= response.message;
+
+      setTimeout(() => {
+        this.successMessage = null;
+        
+      }, 3000);
+      
+    }, (error : any) => {
       console.error('Error:', error);
+      this.failMessage = error.error.data;
+      setTimeout(() => {
+        this.failMessage = null;
+      },3000)
     });
 }
 

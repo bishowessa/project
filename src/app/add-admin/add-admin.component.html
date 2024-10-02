@@ -1,0 +1,20 @@
+<div class="add-admin-container">
+    <h2>Add New Admin</h2>
+    
+    <!-- Success and Error Messages -->
+    @if (successMessage) {
+        <div class="alert alert-success">{{ successMessage }}</div>
+    }
+    @if (errorMessage) {
+        <div class="alert alert-danger">{{ errorMessage }}</div>
+    }
+    
+    <form (submit)="addAdmin($event)">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Admin</button>
+    </form>
+</div>

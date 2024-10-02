@@ -11,7 +11,16 @@
           <label for="password">Password</label>
           <input type="password" name="password" class="form-control" placeholder="Enter your password" required />
         </div>
-  
+        
+        @if (successMessage) {
+          <div class="alert alert-success">{{ successMessage }}</div>
+        }
+      
+        <!-- Display error message -->
+        @if (failMessage) {
+          <div class="alert alert-danger">{{ failMessage }}</div>
+        }
+
         <button type="submit" class="auth-btn">Login</button>
       </form>
   

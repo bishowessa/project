@@ -1,4 +1,5 @@
-<div class="menu-container">
+
+<div class="menu-bar">
     <h1 class="menu-title">Our Menu</h1>
     <p class="menu-subtitle">We consider all the drivers of change give you the components <br> you need to change to create a truly happy experience.</p>
     
@@ -9,18 +10,19 @@
     <button class="filter-btn">Drinks</button>
     <button class="filter-btn">Desserts</button>
     </div>
+</div>
+    
 
-    <!-- <div class="menu-grid">
-      <div class="menu-item" *ngFor="let item of menuItems">
-        <img [src]="item.thumbnail" alt="{{ item.title }}" class="menu-item-image"/>
-        <h3>{{ item.title }}</h3>
-        <p class="menu-item-price">${{ item.price }}</p>
-        <p class="menu-item-description">Made with eggs, lettuce, salt, oil, and other ingredients.</p>
+
+<div class="menu-container">
+    <div class="meal-list">
+        @for (meal of meals; track $index) {
+            <div class="meal-item" [routerLink]="['/meal', meal.idMeal]">
+                <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" />
+                <h3>{{ meal.strMeal }}</h3>
+                <p>Price: ${{ meal.price }}</p>
+                <button routerLink="/meal/{{ meal.idMeal }}">View Details</button>
+            </div>
+        }
     </div>
-    </div> -->
-
-    <!-- <div class="container">
-        <h1>Product</h1>
-        <div id="product-list" class="product-grid"></div> 
-    </div> -->
 </div>

@@ -16,9 +16,9 @@ export class EditUserComponent implements OnInit {
 
   email: string | null = null;
   name: string = '';
-  password: string = '';
   phone: string = '';
   address: string = '';
+  successMessage: string | null = null;
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -33,33 +33,40 @@ export class EditUserComponent implements OnInit {
     this.http.get(`http://localhost:3005/user/${email}`, { withCredentials: true })
     .subscribe((user: any) => {
       this.name = user.name;
-      this.password = user.password;
       this.phone = user.phone;
       this.address = user.address;
     });
   }
   
-  
   updateUser(e: Event) {
     e.preventDefault(); // Prevent page refresh
     const formData = new FormData((e.target as HTMLFormElement)); // Get form data
     
-    const user = {
-      name: formData.get('name') as string,
-      email: this.email,
-      password: formData.get('password') as string,
-      phone: formData.get('phone') as string,
-      address: formData.get('address') as string
-    };
+    const user: any = {};
     
-    console.log('User Data:', user);
+    // Only include non-empty fields in the update
+    const name = formData.get('name') as string;
+    const password = formData.get('password') as string;
+    const phone = formData.get('phone') as string;
+    const address = formData.get('address') as string;
     
+    if (name) user.name = name;
+    if (password) user.password = password;
+    if (phone) user.phone = phone;
+    if (address) user.address = address;
+    
+    user.email = this.email;
+
     this.http.patch('http://localhost:3005/user/updateUser/' + this.email, user, { withCredentials: true })
     .subscribe(response => {
       console.log('Response:', response);
+      // Set success message and reset it after a few seconds
+      this.successMessage = 'User data has been updated successfully!';
+      setTimeout(() => {
+        this.successMessage = null;
+      }, 3000); // Hide message after 3 seconds
     }, error => {
       console.error('Error:', error);
     });
   }
-  
 }

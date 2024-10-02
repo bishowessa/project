@@ -40,6 +40,19 @@
             </select>
         </div>
 
+        @if (successMessage) {
+            <div class="alert alert-success">{{ successMessage }}</div>
+          }
+        
+          <!-- Display error message -->
+          @if (failMessage) {
+            <div class="alert alert-danger">{{ failMessage }}</div>
+          }
+          @if (fail) {
+            <p class="switch-link">Need to login ? <a routerLink="/login">login here</a></p>
+          }
+    
+
         <!-- Submit button triggers the function -->
         <button type="submit" class="booking-btn">Book A Table</button>
     </form>
